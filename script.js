@@ -53,6 +53,8 @@ generateBtn.addEventListener("click", function(){
 
   //WHEN all prompts are answered
   //THEN a password is generated that matches the selected criteria
+  //WHEN the password is generated
+  //THEN the password is either displayed in an alert or written to the page
 
    
   if (lowerCase) {
@@ -82,22 +84,18 @@ generateBtn.addEventListener("click", function(){
     }
     alert("Your password is: " + result + ".");
 
+  } else if (specialCase) {
+    var possible = ` !@#$%^&*()_+=-{[}]:;"'|\<,>.?/`;
+    var result = "";
 
-  } else if (special) {
-    //var possible = "" !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    for (var i = 0; i < (testedPasswordLength); i++) {
+      result += possible.charAt(Math.floor(Math.random() * 10));
+    }
+    alert("Your password is: " + result + ".");
+  
   } else {
 
   }
-
-  
-
- 
-
-  //WHEN the password is generated
-  //THEN the password is either displayed in an alert or written to the page
-  
- 
-  
 
 })
 
